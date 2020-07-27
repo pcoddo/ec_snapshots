@@ -99,3 +99,8 @@ span {
 .show-x span {
   opacity: 1;
 }
+
+iframe {
+    display: block;
+    border-style:none;
+}
