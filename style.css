@@ -1,66 +1,101 @@
-.screen {
-  height: 402px;
-  width: 716px;
-  background: #444857;
-  margin: auto;
+* {
+  box-sizing: border-box;
 }
 
-.grid {
-  font-size: 0;
+body, html {
+  position: relative;
+  width: 716px;
+  height: 402px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
   height: 100%;
   position: relative;
 }
 
-.cell {
-  width: 50%;
+li {
   display: inline-block;
-  height: 201px;
+  height: 100%;
+  width: 25%;
+  border-right: 1px solid white;
   cursor: pointer;
-  transition: height 0.5s, width 0.5s;
   position: absolute;
-  z-index: 1;
+  top: 0;
+  transition: .3s width .2s, left .2s, 100ms z-index .6s;
 }
-.cell:hover {
-  animation: expand 0.5s;
-  animation-fill-mode: forwards;
+li:nth-child(2) {
+  left: 25%;
+}
+li:nth-child(3) {
+  left: 50%;
+}
+li:nth-child(4) {
+  left: 75%;
+}
+li.active {
+  width: 100%;
+  z-index: 1;
+  transition: .3s width .2s, left .2s;
+  border-right: none;
+  left: 0;
+}
+li:before {
+  content: attr(data-title);
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  text-shadow: 2px 2px black;
+  padding-top: 100%;
+  color: white;
+  position: absolute;
+  top: 1;
+  left: 1;
+  transition: 200ms opacity;
+  opacity: 0;
+}
+li:hover:before {
+  opacity: 1;
+}
+li:hover.active:hover:before {
+  display: none;
 }
 
-.cell-a {
+div {
+  background-image: url("https://pcoddo.github.io/ec_snapshots/snapshot_text.png");
+  width: 100%;
+  height: 100%;
+  transition: 1s width;
+}
+li:nth-child(2) div {
+  background-image: url("https://pcoddo.github.io/ec_snapshots/snapshot_text.png");
+}
+li:nth-child(3) div {
+  background-image: url("https://pcoddo.github.io/ec_snapshots/snapshot_text.png");
+}
+li:nth-child(4) div {
   background-image: url("https://pcoddo.github.io/ec_snapshots/snapshot_text.png");
 }
 
-.cell-b {
-  background: #1a88a9;
+span {
+  position: absolute;
   top: 0;
   right: 0;
+  z-index: 3;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 7px 9px;
+  margin: 4px 9px;
+  cursor: pointer;
+  font-size: 1.5em;
+  opacity: 0;
+  transition: 200ms opacity;
 }
-
-.cell-c {
-  background: #7046c6;
-  bottom: 0;
-  left: 0;
-}
-
-.cell-d {
-  background: #58b969;
-  bottom: 0;
-  right: 0;
-}
-
-@keyframes expand {
-  0% {
-    z-index: 40;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-    z-index: 40;
-  }
-}
-@keyframes contract {
-  100% {
-    width: 50%;
-    height: 201px;
-    z-index: 1;
-  }
+.show-x span {
+  opacity: 1;
 }
