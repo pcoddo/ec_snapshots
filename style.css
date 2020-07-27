@@ -1,6 +1,6 @@
 .screen {
-  height: 402px;
-  width: 716px;
+  height: 425px;
+  width: 760px;
   background: #444857;
   margin: auto;
 }
@@ -14,7 +14,7 @@
 .cell {
   width: 50%;
   display: inline-block;
-  height: 201px;
+  height: 212px;
   cursor: pointer;
   transition: height 0.5s, width 0.5s;
   position: absolute;
