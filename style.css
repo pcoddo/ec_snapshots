@@ -19,7 +19,7 @@ ul {
 li {
   display: inline-block;
   height: 100%;
-  width: 25%;
+  width: 50%;
   border-right: 1px solid white;
   cursor: pointer;
   position: absolute;
@@ -27,13 +27,7 @@ li {
   transition: .3s width .2s, left .2s, 100ms z-index .6s;
 }
 li:nth-child(2) {
-  left: 25%;
-}
-li:nth-child(3) {
   left: 50%;
-}
-li:nth-child(4) {
-  left: 75%;
 }
 li.active {
   width: 100%;
@@ -67,19 +61,13 @@ li:hover.active:hover:before {
 }
 
 div {
-  background-image: url("https://pcoddo.github.io/ec_snapshots/snapshot_text.png");
+  background-image: url("https://pcoddo.github.io/ec_snapshots/snapshot_text1.png");
   width: 100%;
   height: 100%;
   transition: 1s width;
 }
 li:nth-child(2) div {
-  background-image: url("https://pcoddo.github.io/ec_snapshots/snapshot_text.png");
-}
-li:nth-child(3) div {
-  background-image: url("https://pcoddo.github.io/ec_snapshots/snapshot_text.png");
-}
-li:nth-child(4) div {
-  background-image: url("https://pcoddo.github.io/ec_snapshots/snapshot_text.png");
+  background-image: url("https://pcoddo.github.io/ec_snapshots/snapshot_text2.png");
 }
 
 span {
@@ -98,9 +86,4 @@ span {
 }
 .show-x span {
   opacity: 1;
-}
-
-iframe {
-    display: block;
-    border-style:none;
 }
